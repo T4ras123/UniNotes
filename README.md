@@ -20,9 +20,6 @@ between all the files.
 │   ├── external/
 │   └── interim/
 ├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_modeling.ipynb
-│   └── 03_inference.ipynb
 ├── src/
 │   ├── data/
 │   ├── features/
@@ -39,7 +36,4 @@ between all the files.
 ├── config/
 │   └── config.yaml
 └── scripts/
-    ├── train.sh
-    ├── evaluate.sh
-    └── predict.sh
 ```
