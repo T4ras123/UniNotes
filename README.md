@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/90b51f92-0871-4a93-a8d7-a0d056398864)
 # UniNotes
 
 Imagerecognition model for the app to help students learn. ML algorithm will recognize text from the
@@ -6,7 +5,8 @@ handwritten notes submitted by students and transcribe it to LaTex format for mo
 Then another model will analyze the content and automatically sort them by theme enabling search
 between all the files.
 
-![Uploading image.png…](https://arxiv.org/pdf/2010.11929)
+
+![image]([https://github.com/user-attachments/assets/90b51f92-0871-4a93-a8d7-a0d056398864](https://arxiv.org/pdf/2010.11929))
 
 
 # Structure
