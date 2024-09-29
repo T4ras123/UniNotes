@@ -6,7 +6,6 @@ Then another model will analyze the content and automatically sort them by theme
 between all the files.
 
 
-![image](https://github.com/user-attachments/assets/55aa5b12-3fd1-4e39-ae43-ed9f7e5f5474)
 
 
 # Structure
