@@ -1,1 +1,5 @@
 test.py
+test.ipynb
+/data/external/*
+*.png
+data/dataset/__pycache__/*
