@@ -15,26 +15,17 @@ between all the files.
 ├── requirements.txt
 ├── setup.py
 ├── .gitignore
+|
 ├── data/
-│   ├── raw/
-│   ├── processed/
-│   ├── external/
-│   └── interim/
+│   └── external/
 ├── notebooks/
-├── src/
-│   ├── data/
-│   ├── features/
-│   ├── models/
-│   ├── inference/
-│   └── utils/
-├── models/
-│   └── model.pkl
-├── reports/
-│   ├── final_report.pdf
-│   └── figures/
-├── experiments/
-│   └── experiment1/
+|
+├── LaTeX-TrOCR/
+|   ├── utils/
+│   └── dataset/
+|
 ├── config/
-│   └── config.yaml
-└── scripts/
+|   └── config.yaml
+|
+└── docker/
 ```
