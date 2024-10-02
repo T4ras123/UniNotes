@@ -2,4 +2,4 @@ test.py
 test.ipynb
 /data/external/*
 *.png
-data/dataset/__pycache__/*
+/LaTex-TrOCR/dataset/__pycache__/*
