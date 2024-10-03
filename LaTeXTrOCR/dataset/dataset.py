@@ -18,8 +18,6 @@ from LaTeXTrOCR.dataset.transforms import train_transform, test_transform
 
 class Img2LaTeXDataset:
     
-
-    
     def __init__(self, equations=None, images=None, tokenkizer=None, shuffle=True, batchsize=16, max_seq_len=1024,
                  max_dimentions=(1024, 512), min_dimentions=(32,32), pad = False, keep_smaller_batches=False, test=False):
         

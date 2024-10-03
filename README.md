@@ -15,17 +15,13 @@ between all the files.
 ├── requirements.txt
 ├── setup.py
 ├── .gitignore
-|
 ├── data/
 │   └── external/
 ├── notebooks/
-|
 ├── LaTeX-TrOCR/
 |   ├── utils/
 │   └── dataset/
-|
 ├── config/
 |   └── config.yaml
-|
 └── docker/
 ```
