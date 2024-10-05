@@ -19,6 +19,8 @@ from LaTeXTrOCR.dataset.transforms import train_transform, test_transform
 
 
 class Img2LaTeXDataset:
+    """Dataset class for the model that converts input data to torch vectors
+    """
 
     data = defaultdict(lambda:[]) 
     
