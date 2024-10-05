@@ -2,6 +2,9 @@ import torch
 import random 
 import os
 
+"""All the universal and neceserry functions in one file
+"""
+
 def exist(val):
     return val is not None
 
