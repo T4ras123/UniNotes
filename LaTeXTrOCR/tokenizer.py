@@ -79,4 +79,9 @@ class GPT4Tokenizer():
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
-    
+    parser.add_argument('text', type=str, help='text to train the tokenizer on')
+    parser.add_argument('vocab_size', type=int, help='desired vocab size')
+    parser.add_argument('--vocab_destin', '-vd', help='.json file to save vocab to. Defaults to vocab.txt')
+    parser.add_argument('--merges', '-m', help='.txt to save merges to. Defaults to merges.txt')
+    args = parser.parse_args()
+
