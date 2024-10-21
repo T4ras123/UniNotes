@@ -1,7 +1,8 @@
 import regex as re
 import json
+import argparse
 
-class GPT4Tokenizer():
+class Tokenizer():
     def __init__(self):
         self.vocab = {idx : bytes([idx]) for idx in range(256)}
         self.merges = dict()
@@ -28,6 +29,8 @@ class GPT4Tokenizer():
             ids = [self.merge(chunk_ids, pair, idx) for chunk_ids in ids]
             self.merges[pair] = idx
             self.vocab[idx] = self.vocab[pair[0]] + self.vocab[pair[1]]
+        
+        self.save_params()
 
     
     def encode(self, text):
@@ -70,18 +73,22 @@ class GPT4Tokenizer():
         return newids
 
 
-    def save_params(self, vocab_file="vocab.json", merges_file="merges.txt"):
-        with open(vocab, "w") as vocabfile:
-            json.dump(self.vocab, vocabfile)
-        with open(merges, "w") as mergesfile:
-            mergesfile.write(self.merges)
+    def save_params(self):
+        vocab_str = {k: v.decode('latin1') for k, v in self.vocab.items()}
+        with open('./model/dataset/tokenizer.json', "w") as vocabfile:
+            vocab_json=json.dumps(vocab_str, indent=2)
+            vocabfile.write(vocab_json)
 
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('text', type=str, help='text to train the tokenizer on')
-    parser.add_argument('vocab_size', type=int, help='desired vocab size')
-    parser.add_argument('--vocab_destin', '-vd', help='.json file to save vocab to. Defaults to vocab.txt')
-    parser.add_argument('--merges', '-m', help='.txt to save merges to. Defaults to merges.txt')
+    parser.add_argument('-t', '--text', type=str, help='text to train the tokenizer on')
+    parser.add_argument('-v', '--vocab_size', type=int, help="How many tokens do you want in the final vocab")
     args = parser.parse_args()
+    
+    with open(args.text, "r") as f:
+        text = f.read()
+    
+    t = Tokenizer()
+    t.train(text, args.vocab_size)
 
