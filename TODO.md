@@ -4,3 +4,4 @@
 - [ ] Parquet to Tensor function (LaTeXTrOCR/dataset/tarquet.py)
 - [ ] Scraping arXiv for paragraphs (LaTeXTrOCR/dataset/arxiv.py)
 - [ ] Scraping internet for handwritten text + images
+- [ ] Layout detection
