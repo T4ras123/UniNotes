@@ -1,10 +1,12 @@
 import albumentations as alb
 from albumentations.pytorch import ToTensorV2
-    """Create a transformation for images 
+
+"""Create a transformation for images 
     splited into 
     1. Train transformation (to improve generalization of the model)
     2. Test transformation for every imput image after training stage
-    """
+"""
+    
 train_transform = alb.Compose(
     [
     alb.Compose(

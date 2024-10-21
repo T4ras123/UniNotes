@@ -2,5 +2,6 @@ test.py
 test.ipynb
 /data/external/*
 *.png
+/LaTeXTrOCR/__pycache__/*
 /LaTeXTrOCR/dataset/__pycache__/*
 /LaTeXTrOCR/final_png_formulas.txt
