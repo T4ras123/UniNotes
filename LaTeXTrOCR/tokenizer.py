@@ -74,21 +74,38 @@ class Tokenizer():
 
 
     def save_params(self):
-        vocab_str = {k: v.decode('latin1') for k, v in self.vocab.items()}
+        vocab_str = {k: v.decode('utf-8') for k, v in self.vocab.items()}
         with open('./model/dataset/tokenizer.json', "w") as vocabfile:
             vocab_json=json.dumps(vocab_str, indent=2)
             vocabfile.write(vocab_json)
+            
+            
+    def load_vocab(self, path):
+        with open(path, "r") as f:
+            vocab_json = json.load(f)
+            vocab_dict = {k:v.encode('utf-8') for k, v in vocab_json.items()}
+            self.vocab = vocab_dict
 
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-t', '--text', type=str, help='text to train the tokenizer on')
-    parser.add_argument('-v', '--vocab_size', type=int, help="How many tokens do you want in the final vocab")
+    parser.add_argument('-t', '--text', type=str, default=None, help='text to train the tokenizer on')
+    parser.add_argument('-v', '--vocab_size', type=int, default=256,  help="How many tokens do you want in the final vocab")
+    parser.add_argument('-l', '--load', type=str, default=None, help="Load vocab from the file")
     args = parser.parse_args()
     
-    with open(args.text, "r") as f:
-        text = f.read()
-    
     t = Tokenizer()
-    t.train(text, args.vocab_size)
+    
+    if args.text is not None:
+        with open(args.text, "r") as f:
+            text = f.read()
+        t.train(text, args.vocab_size)
+        
+    elif args.load is not None: 
+        t.load_vocab(args.load)
+        
+    else:
+        raise NotImplemented
+      
+    
 
