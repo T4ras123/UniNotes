@@ -75,11 +75,9 @@ class Tokenizer():
 
 
     def save_params(self):
-        os.makedirs('./model/dataset', exist_ok=True)
-
-        vocab_str = {k: v.decode('utf-8',errors='replace') for k, v in self.vocab.items()}
-        with open('./model/dataset/tokenizer.json', "w") as vocabfile:
-            vocab_json=json.dumps(vocab_str, indent=2)
+        vocab_str = {k: v.decode('utf-8', errors='replace') for k, v in self.vocab.items()}
+        with open('model/dataset/tokenizer.json', "w") as vocabfile:
+            vocab_json = json.dumps(vocab_str, indent=2)
             vocabfile.write(vocab_json)
             
             

@@ -1,1 +1,0 @@
-from LaTeXTrOCR.utils.utils import *
