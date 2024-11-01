@@ -1,5 +1,7 @@
 # UniNotes 📚
 
+## !!! Now developed and maintained [here](https://github.com/Ecticx/LaTeXTrOCR) !!!
+
 TrOCR model that converts images of handwitten notes into LaTeX format. The goal of the project is to make studying easier by making ogranizing and acessing notes faster and more convinient.
 
 The final goal is to create three models:
